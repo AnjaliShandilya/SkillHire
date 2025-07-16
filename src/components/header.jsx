@@ -31,22 +31,22 @@ const Header = () => {
 
   return (
     <>
-      <nav className="lg:pr-2 flex justify-between items-center p-2 ">
+      <nav className="lg:pr-2 flex justify-between items-center p-1 ">
         <Link to="/">
-          <img src="/logo1.png" className="h-16 rounded-full lg:w-16" alt="Hirrd Logo" />
+          <img src="/logo.png" className="h-16 lg:w-36 bg-transparent" alt="Hirrd Logo" />
         </Link>
 
         <div className="flex gap-6 mx-2">
           <SignedOut>
-            <Button className="bg-blue-700 rounded-full lg:w-32" onClick={() => setShowSignIn(true)}>
+            <Button className="bg-cyan-400 text-black hover:bg-cyan-500 rounded-full lg:w-32" onClick={() => setShowSignIn(true)}>
               Login
             </Button>
           </SignedOut>
           <SignedIn>
             {user?.unsafeMetadata?.role === "recruiter" && (
               <Link to="/post-job">
-                <Button variant="destructive" className="rounded-full">
-                  <PenBox size={20} className="mr-2" />
+                <Button variant="destructive" className="rounded-full text-[8px] sm:text-base">
+                  <PenBox  className="mr-1 sm:mr-2 size-3 sm:size-5" />
                   Post a Job
                 </Button>
               </Link>
@@ -78,7 +78,7 @@ const Header = () => {
 
       {showSignIn && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 bg-black bg-opacity-50 z-[999] flex justify-center items-center"
           onClick={handleOverlayClick}
         >
           <SignIn

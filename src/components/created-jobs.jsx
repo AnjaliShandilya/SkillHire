@@ -39,7 +39,9 @@ const CreatedJobs = () => {
               );
             })
           ) : (
-            <div>No Jobs Found 😢</div>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+      <div className="text-2xl font-semibold text-white">No Jobs Found</div>
+      <img src="nojobs.png" alt="No Jobs" className="w-72 h-72 object-contain" /></div>
           )}
         </div>
       )}

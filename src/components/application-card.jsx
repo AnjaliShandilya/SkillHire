@@ -38,21 +38,21 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
   };
 
   return (
-    <Card>
+    <Card className="bg-[#edf2fc]">
       {loadingHiringStatus && <BarLoader width={"100%"} color="#36d7b7" />}
       <CardHeader>
-        <CardTitle className="flex justify-between font-bold text-blue-600">
+        <CardTitle className="flex justify-between font-bold text-base lg:text-xl text-blue-600">
           {isCandidate
             ? `${application?.job?.title} at ${application?.job?.company?.name}`
             : application?.name}
           <Download
             size={18}
-            className="bg-white text-blue-600 rounded-full h-8 w-8 p-1.5 cursor-pointer"
+            className="bg-[#CDFF] text-blue-600 rounded-full h-8 w-8 p-1.5 cursor-pointer"
             onClick={handleDownload}
           />
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col gap-4 flex-1 text-blue-700">
+      <CardContent className="flex flex-col gap-3 flex-1 text-blue-700 text-xs sm:text-base">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex gap-2 items-center">
             <BriefcaseBusiness size={15} /> {application?.experience} years of
@@ -68,7 +68,7 @@ const ApplicationCard = ({ application, isCandidate = false }) => {
         </div>
         <hr />
       </CardContent>
-      <CardFooter className="flex justify-between text-blue-700">
+      <CardFooter className="flex justify-between text-blue-700 sm:text-base text-xs">
         <span>{new Date(application?.created_at).toLocaleString()}</span>
         {isCandidate ? (
           <span className="capitalize font-bold">

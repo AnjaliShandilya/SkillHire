@@ -59,11 +59,6 @@
   }
 }
 
-.wmde-markdown p{
-  list-style-type: disc;
-  padding-left: 25px;
-  color: white;
-}
 
 @layer base {
   * {

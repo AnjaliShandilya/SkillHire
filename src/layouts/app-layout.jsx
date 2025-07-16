@@ -8,7 +8,7 @@ const AppLayout = () => {
         <Header />
         <Outlet />
       </main>
-      <div className="p-10 text-center bg-blue-100 text-blue-600 font-semibold  text-lg mt-7">
+      <div className="p-2 text-center font-semibold  text-[#CDFF] mt-8">
         Made with 💗 by Anjali Shandilya
       </div>
     </div>

@@ -51,15 +51,15 @@ const JobPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 mt-5">
-      <div className="flex flex-col-reverse gap-6 md:flex-row justify-between items-center">
-        <h1 className="text-white font-extrabold pb-3 text-4xl sm:text-6xl">
+    <div className="flex flex-col gap-3 sm:gap-5 mt-6 px-6 sm:px-16">
+      <div className="flex  gap-6 flex-row justify-between items-center">
+        <h1 className="text-white font-extrabold  text-lg sm:text-4xl">
           {job?.title}
         </h1>
-        <img src={job?.company?.logo_url} className="h-12" alt={job?.title} />
+        <img src={job?.company?.logo_url} className="h-4 sm:h-7" alt={job?.title} />
       </div>
 
-      <div className="flex justify-between text-white">
+      <div className="flex justify-between text-cyan-400 text-[12px] sm:text-base">
         <div className="flex gap-2">
           <MapPinIcon /> {job?.location}
         </div>
@@ -97,15 +97,15 @@ const JobPage = () => {
         </Select>
       )}
 
-      <h2 className="text-2xl sm:text-3xl font-bold text-white">About the job</h2>
-      <p className="sm:text-lg text-white">{job?.description}</p>
+      <h2 className="text-base sm:text-2xl font-bold text-white">About the job</h2>
+      <p className="sm:text-sm text-xs text-cyan-400">{job?.description}</p>
 
-      <h2 className="text-2xl sm:text-3xl font-bold text-white">
+      <h2 className="text-base sm:text-2xl font-bold text-white">
         What we are looking for
       </h2>
       <MDEditor.Markdown
         source={job?.requirement}
-        className="wmde-markdown bg-transparent sm:text-lg text-white " // add global ul styles - tutorial
+        className=" bg-transparent text-[12px] sm:text-sm text-cyan-400 pl-3 m-0" // add global ul styles - tutorial
       />
       {job?.recruiter_id !== user?.id && (
         <ApplyJobDrawer

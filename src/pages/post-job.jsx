@@ -87,23 +87,19 @@ const PostJob = () => {
   }
 
   return (
-    <div>
-      <h1 className="text-white font-extrabold text-5xl sm:text-7xl text-center pb-8">
+    <div className="px-6 sm:px-16">
+      <h1 className="text-white font-extrabold text-2xl sm:text-4xl text-center pb-8">
         Post a Job
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 p-4 pb-0"
+        className="flex flex-col gap-3 px-4"
       >
-        <Input placeholder="Job Title" {...register("title")} />
+      <div className="text-gray-600 grid lg:grid-cols-2 gap-2"> <Input placeholder="Job Title" {...register("title")} />
         {errors.title && <p className="text-red-500">{errors.title.message}</p>}
 
-        <Textarea placeholder="Job Description" {...register("description")} />
-        {errors.description && (
-          <p className="text-red-500">{errors.description.message}</p>
-        )}
 
-        <div className="flex gap-4 items-center">
+         <div className="flex gap-2 items-center w-full">
           <Controller
             name="location"
             control={control}
@@ -149,14 +145,21 @@ const PostJob = () => {
               </Select>
             )}
           />
-          <AddCompanyDrawer fetchCompanies={fnCompanies} />
-        </div>
+          <div><AddCompanyDrawer  fetchCompanies={fnCompanies} /></div>
+        </div></div>
         {errors.location && (
           <p className="text-red-500">{errors.location.message}</p>
         )}
         {errors.company_id && (
           <p className="text-red-500">{errors.company_id.message}</p>
         )}
+
+
+        <Textarea placeholder="Job Description" {...register("description")} />
+        {errors.description && (
+          <p className="text-red-500">{errors.description.message}</p>
+        )}
+
 
         <Controller
           name="requirement"

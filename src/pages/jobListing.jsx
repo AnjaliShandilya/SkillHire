@@ -73,26 +73,21 @@ const JobListing = () => {
   }
 
   return (
-    <div className="">
-      <h1 className="text-white font-extrabold text-6xl sm:text-7xl text-center pb-8 ">
+    <div className="sm:px-16 px-6">
+      <h1 className="text-white font-extrabold text-2xl sm:text-4xl  text-center pb-5 ">
         Latest Jobs
       </h1>
       <form
         onSubmit={handleSearch}
-        className="h-14 flex flex-row w-full gap-2 items-center mb-3"
+        className="h-14 grid lg:grid-cols-2 grid-cols-1 w-full gap-3 items-center"
       >
         <Input
           type="text"
           placeholder="Search Jobs by Title.."
           name="search-query"
-          className="h-full flex-1  px-4 text-md"
+          className=" text-md"
         />
-        <Button type="submit" className="h-full sm:w-28" variant="blue">
-          Search
-        </Button>
-      </form>
-
-      <div className="flex flex-col sm:flex-row gap-2">
+        <div className="grid grid-flow-col  gap-1 lg:gap-2 w-full text-gray-600">
         <Select value={location} onValueChange={(value) => setLocation(value)}>
           <SelectTrigger>
             <SelectValue placeholder="Filter by Location" />
@@ -129,21 +124,26 @@ const JobListing = () => {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Button
-          className="sm:w-1/2"
-          variant="destructive"
+          <Button
+          className="text-black bg-cyan-400 hover:bg-cyan-300"
+          
           onClick={clearFilters}
         >
-          Clear Filters
+          X
         </Button>
-      </div>
+        <Button type="submit" className="text-white lg:w-28 w-14 bg-transparent border-2 border-cyan-400 hover:bg-gray-800">
+          Search
+        </Button></div>
+ 
+      </form>
 
       {loadingJobs && (
         <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
       )}
 
       {loadingJobs === false && (
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+           <div className=" mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {jobs?.length ? (
             jobs.map((job) => {
               return (
@@ -155,7 +155,9 @@ const JobListing = () => {
               );
             })
           ) : (
-            <div>No Jobs Found 😢</div>
+            <div className="flex flex-col items-center justify-center w-full gap-4">
+      <div className="text-2xl font-semibold text-white">No Jobs Found</div>
+      <img src="nojobs.png" alt="No Jobs" className="w-72 h-72 object-contain" /></div>
           )}
         </div>
       )}

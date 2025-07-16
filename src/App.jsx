@@ -76,7 +76,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="bg-blue-400 min-h-screen w-screen">
+    <div className="min-h-screen w-full bg-gradient-to-bl from-[#0d1117] to-[#0e1f18]  text-white ">
       <RouterProvider router={router} />
     </div>
   );

@@ -26,8 +26,8 @@ const SavedJobs = () => {
   }
 
   return (
-    <div>
-      <h1 className="text-white font-extrabold text-6xl sm:text-7xl text-center pb-8">
+    <div className="sm:px-16 px-6">
+      <h1 className="text-white font-extrabold text-2xl sm:text-4xl text-center pb-5">
         Saved Jobs
       </h1>
 
@@ -45,7 +45,9 @@ const SavedJobs = () => {
               );
             })
           ) : (
-            <div>No Saved Jobs 👀</div>
+             <div className="flex flex-col items-center justify-center w-full gap-4">
+      <div className="text-2xl font-semibold text-white">No Jobs Found</div>
+      <img src="nojobs.png" alt="No Jobs" className="w-72 h-72 object-contain" /></div>
           )}
         </div>
       )}

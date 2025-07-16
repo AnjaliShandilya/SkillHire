@@ -22,6 +22,7 @@ const JobCard = ({
   isMyJob = false,
 }) => {
   const [saved, setSaved] = useState(savedInit);
+  console.log(job.description,"job")
 
 
   const { loading: loadingDeleteJob, fn: fnDeleteJob } = useFetch(deleteJob, {
@@ -58,12 +59,12 @@ const JobCard = ({
   }, [savedJob]);
 
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col shadow-2xl ">
       {loadingDeleteJob && (
         <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
       )}
       <CardHeader className="flex">
-        <CardTitle className="flex justify-between font-bold">
+        <CardTitle className="flex justify-between  font-bold">
           {job.title}
           {isMyJob && (
             <Trash2Icon
@@ -75,19 +76,19 @@ const JobCard = ({
           )}
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex flex-col gap-4 flex-1 ">
+      <CardContent className="flex flex-col gap-4 flex-1 text-xs sm:text-sm">
         <div className="flex justify-between">
-          {job.company && <img src={job.company.logo_url} className="h-6" />}
+          {job.company && <img src={job.company.logo_url} className="h-5" />}
           <div className="flex gap-2 items-center">
             <MapPinIcon size={15} /> {job.location}
           </div>
         </div>
         <hr />
-        {job.description.substring(0, job.description.indexOf("."))}.
+        {job?.description}
       </CardContent>
       <CardFooter className="flex gap-2">
         <Link to={`/job/${job.id}`} className="flex-1">
-          <Button variant="blue"  className="w-full bg-blue-500">
+          <Button  className="w-full bg-cyan-500">
             More Details
           </Button>
         </Link>
