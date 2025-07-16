@@ -74,7 +74,7 @@ const JobListing = () => {
 
   return (
     <div className="sm:px-16 px-6">
-      <h1 className="text-white font-extrabold text-2xl sm:text-4xl  text-center pb-5 ">
+      <h1 className="text-white font-extrabold text-2xl sm:text-4xl  text-center ">
         Latest Jobs
       </h1>
       <form
@@ -138,12 +138,12 @@ const JobListing = () => {
       </form>
 
       {loadingJobs && (
-        <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
+        <BarLoader className="mt-10" width={"100%"} color="#36d7b7" />
       )}
 
       {loadingJobs === false && (
         
-           <div className=" mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+           <div className=" sm:mt-6 mt-16  grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {jobs?.length ? (
             jobs.map((job) => {
               return (
