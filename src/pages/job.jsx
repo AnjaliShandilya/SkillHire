@@ -98,14 +98,14 @@ const JobPage = () => {
       )}
 
       <h2 className="text-base sm:text-2xl font-bold text-white">About the job</h2>
-      <p className="sm:text-sm text-xs text-cyan-400">{job?.description}</p>
+      <p className="sm:text-sm text-xs text-[#CDFF]">{job?.description}</p>
 
       <h2 className="text-base sm:text-2xl font-bold text-white">
         What we are looking for
       </h2>
       <MDEditor.Markdown
         source={job?.requirement}
-        className=" bg-transparent text-[12px] sm:text-sm text-cyan-400 pl-3 m-0" // add global ul styles - tutorial
+        className=" bg-transparent text-[12px] sm:text-sm text-[#CDFF] pl-3 m-0" // add global ul styles - tutorial
       />
       {job?.recruiter_id !== user?.id && (
         <ApplyJobDrawer

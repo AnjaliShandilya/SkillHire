@@ -27,7 +27,7 @@ const SavedJobs = () => {
 
   return (
     <div className="sm:px-16 px-6">
-      <h1 className="text-white font-extrabold text-2xl sm:text-4xl text-center pb-5">
+      <h1 className="text-white font-extrabold text-2xl sm:text-5xl text-center">
         Saved Jobs
       </h1>
 

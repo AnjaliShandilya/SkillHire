@@ -22,7 +22,7 @@ const LandingPage = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center lg:px-20 px-10">
   {/* Left Text (reuse or add more context) */}
   <div>
-    <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+    <h2 className="text-x4l sm:text-5xl font-bold mb-4">
       Discover The <br /> Truth Behind The <br />
       <span className="text-cyan-400">Hiring Process</span>
     </h2>
@@ -78,12 +78,12 @@ const LandingPage = () => {
         <span>45 Reviews</span>
       </div>
       <div className="flex gap-2">
-        <button className="bg-cyan-400 text-black text-xs px-3 py-1 rounded-md font-medium hover:bg-cyan-300">
+        <span className="bg-cyan-400 text-black text-xs px-3 py-1 rounded-md font-medium hover:bg-cyan-300">
           Apply Now
-        </button>
-        <button className="border border-gray-600 text-white text-xs px-3 py-1 rounded-md hover:bg-gray-800">
+        </span>
+        <span className="border border-gray-600 text-white text-xs px-3 py-1 rounded-md hover:bg-gray-800">
           View Details
-        </button>
+        </span>
       </div>
     </div>
 
@@ -96,7 +96,7 @@ const LandingPage = () => {
       />
       <div>
         <p className="text-white text-sm font-semibold">Microsoft</p>
-        <p className="text-yellow-400 text-xs">★★★★★ 5.0 - Excellent</p>
+        <p className="text-yellow-400 text-xs">★★★★★ 5.0 </p>
       </div>
     </div>
   </div>
@@ -125,7 +125,7 @@ const LandingPage = () => {
       </Carousel>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:px-20 px-10">
-        <Card className="  border-[#11241c] border-2 bg-gradient-to-tl from-[#0e1218] to-[#11241c]  text-white  rounded-2xl shadow-2xl hover:border-[#193529]">
+        <Card className="  border-cyan-900 border-2 bg-gradient-to-tl from-[#0e1218] to-[#112414]  text-white  rounded-2xl shadow-2xl">
           <CardHeader>
             <CardTitle className="font-bold text-white">For Job Seekers</CardTitle>
           </CardHeader>
@@ -133,7 +133,7 @@ const LandingPage = () => {
             Search and apply for jobs, track applications, and more.
           </CardContent>
         </Card>
-        <Card className="  border-[#11241c] border-2 rounded-2xl  bg-gradient-to-tl from-[#0e1218] to-[#11241c]  text-white shadow-2xl hover:border-[#193529]" >
+        <Card className="  border-cyan-900 border-2 rounded-2xl  bg-gradient-to-tl from-[#0e1218] to-[#11241c]  text-white shadow-2xl" >
           <CardHeader >
             <CardTitle className="font-bold text-white">For Employers</CardTitle>
           </CardHeader>
@@ -143,7 +143,7 @@ const LandingPage = () => {
         </Card>
       </section>
 
-      <Accordion type="multiple" className="w-full text-base text-[#CDFF] lg:px-14 px-8">
+      <Accordion type="multiple" className="w-full text-base text-white lg:px-14 px-8">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>

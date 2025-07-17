@@ -74,7 +74,7 @@ const JobListing = () => {
 
   return (
     <div className="sm:px-16 px-6">
-      <h1 className="text-white font-extrabold text-2xl sm:text-4xl  text-center ">
+      <h1 className="text-white font-extrabold text-2xl sm:text-5xl  mb-5 text-center ">
         Latest Jobs
       </h1>
       <form
